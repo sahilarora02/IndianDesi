@@ -50,7 +50,7 @@ export default function LoginScreen() {
               style={{
                 textAlign: "center",
                 fontSize: 15,
-                paddingTop: 150,
+                paddingTop: 80,
               }}
             >
               Now
@@ -90,11 +90,11 @@ const styles = StyleSheet.create({
     left: -60, // Adjust the position as needed
     width: 220,
     height: 220,
-    backgroundColor: "#FE8A00",
+    backgroundColor: "#FC8019",
     borderRadius: 125,
   },
   loginTxt: {
-    color: "black", // Color of the text
+    color: "white", // Color of the text
     fontSize: 22, // Font size of the text
     fontWeight: "bold",
     marginTop: 40,

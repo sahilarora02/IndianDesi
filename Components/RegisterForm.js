@@ -1,20 +1,52 @@
 import { useState } from "react";
-import { View, TextInput, StyleSheet, Button } from "react-native";
+import { View, TextInput, StyleSheet, Button, Alert } from "react-native";
 import CustomBtn from "./CustomBtn";
 
 export default function RegisterForm() {
-  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [pswd, setPswd] = useState("");
-  const handleSubmit = () => {
-    console.log("User=>", user);
-    console.log("password=>", pswd);
+  const handleSubmit = async () => {
+    try {
+      console.log("here");
+      const response = await fetch("http://192.168.1.41:8000/signUp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          password: pswd,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Login successful:", data);
+        Alert.alert("Registration Done");
+      } else {
+        console.log("Login failed:", data);
+        Alert.alert("Registration Failed");
+      }
+    } catch (error) {
+      console.error("Error during register:", error);
+    }
   };
+
   return (
     <View>
       <TextInput
-        value={user}
-        onChangeText={setUser}
-        placeholder="Set User Name"
+        value={name}
+        onChangeText={setName}
+        placeholder="Enter Name"
+        style={styles.input}
+      />
+      <TextInput
+        value={email}
+        onChangeText={setEmail}
+        placeholder="Enter Email Id"
         style={styles.input}
       />
       <TextInput
