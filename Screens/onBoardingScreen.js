@@ -18,12 +18,6 @@ const OnBoardingScreen = ({ route }) => {
     getName();
   }, []);
 
-  // useLayoutEffect(() => {
-  //   navigation.setOptions({
-  //     title: name,
-  //   });
-  // }, [navigation, name]);
-
   console.log("onboard");
   const buttonsData = [
     { mealType: "Breakfast", color: "rgba(34, 193, 195, 0.8)" },

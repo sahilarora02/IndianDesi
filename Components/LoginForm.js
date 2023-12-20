@@ -10,6 +10,7 @@ import {
 import CustomBtn from "./CustomBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/core";
+import { useLogin } from "../context/LoginProvider";
 
 export default function LoginForm() {
   const navigation = useNavigation();
@@ -31,6 +32,8 @@ export default function LoginForm() {
   const nav = () => {
     navigation.replace("OnBoard");
   };
+
+  const { setIsLogin } = useLogin();
   const handleSubmit = async () => {
     if (validate()) {
       try {
@@ -52,8 +55,9 @@ export default function LoginForm() {
           console.log("Login successful:", data);
           await AsyncStorage.setItem("name", data.user.name);
           await AsyncStorage.setItem("auth", "true");
+          setIsLogin(true);
 
-          nav();
+          //   nav();
         } else {
           console.log("Login failed:", data);
           Alert.alert("login Failed");
