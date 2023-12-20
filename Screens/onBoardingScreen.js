@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 import LottieView from "lottie-react-native";
 
-const OnBoardingScreen = () => {
+const OnBoardingScreen = ({ navigation }) => {
   const buttonsData = [
     { mealType: "Breakfast", color: "rgba(34, 193, 195, 0.8)" },
     { mealType: "Lunch", color: "rgba(255, 153, 0, 0.8)" },
@@ -32,8 +32,9 @@ const OnBoardingScreen = () => {
             key={index}
             style={[styles.buttonCard, { borderColor: button.color }]}
             onPress={() => {
-              // Add your navigation logic here
-              console.log(`Button pressed for ${button.mealType}`);
+              navigation.navigate("mainScreen", {
+                selectedMeal: button.mealType,
+              }) 
             }}
           >
             <Text style={styles.buttonText}>{button.mealType}</Text>
@@ -56,6 +57,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 10,
     color: "#555",
+    fontStyle:'italic'
   },
   QuestionContainer: {
     backgroundColor: "#e62e00",
