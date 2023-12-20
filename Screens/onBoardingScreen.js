@@ -1,8 +1,30 @@
-import React from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import React, { useLayoutEffect, useEffect, useState } from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import LottieView from "lottie-react-native";
+import { useNavigation } from "@react-navigation/core";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const OnBoardingScreen = ({ navigation }) => {
+const OnBoardingScreen = ({ route }) => {
+  const navigation = useNavigation();
+
+  const [name, setName] = useState();
+
+  const getName = async () => {
+    const n = await AsyncStorage.getItem("name");
+    setName(n);
+  };
+
+  useEffect(() => {
+    getName();
+  }, []);
+
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     title: name,
+  //   });
+  // }, [navigation, name]);
+
+  console.log("onboard");
   const buttonsData = [
     { mealType: "Breakfast", color: "rgba(34, 193, 195, 0.8)" },
     { mealType: "Lunch", color: "rgba(255, 153, 0, 0.8)" },
@@ -10,12 +32,12 @@ const OnBoardingScreen = ({ navigation }) => {
   ];
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Welcome Back, Sahil</Text>
+      <Text style={styles.heading}>Welcome Back, {name} </Text>
       <LottieView
         source={require("../assets/onBoardingAnimation.json")}
         loop
         autoPlay
-        style={{ height: 250, width: 250 }}
+        style={{ height: 200, width: 250 }}
       />
       <Text style={styles.description}>
         Spice up your meals and add a dash of joy to your day. From breakfast to
@@ -23,7 +45,7 @@ const OnBoardingScreen = ({ navigation }) => {
       </Text>
       <View style={styles.QuestionContainer}>
         <Text style={styles.QuestionText}>
-          Aaj {`\u2728`}Khana{`\u2728`} main kya banau?
+          Aaj {`\u2728`}Khane{`\u2728`} main kya banau?
         </Text>
       </View>
       <View style={styles.buttonGrid}>
@@ -60,7 +82,7 @@ const styles = StyleSheet.create({
     fontStyle:'italic'
   },
   QuestionContainer: {
-    backgroundColor: "#e62e00",
+    backgroundColor: "#FC8019",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 15,

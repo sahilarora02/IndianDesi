@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
 
     height: 50,
-    backgroundColor: "#FE8A00",
+    backgroundColor: "#FC8019",
     borderRadius: 20,
     justifyContent: "center",
     flexDirection: "row",
@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontSize: 20,
     fontWeight: "bold",
-    color: "black",
+    color: "white",
   },
 });
