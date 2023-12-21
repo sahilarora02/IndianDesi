@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "IndianDesi",
+    "name": "Indian Desi",
     "slug": "IndianDesi",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,7 +10,6 @@
       "image": "./assets/SplashNew.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
-     
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,13 +18,19 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "indiandesi.app",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e890599f-522b-465a-a5de-6b9765bae012"
+      }
     }
   }
 }

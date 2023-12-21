@@ -20,6 +20,8 @@ export default function LoginScreen() {
 
   return (
     <SafeAreaView style={styles.loginMain}>
+      <StatusBar barStyle="dark-content" />
+
       <ScrollView>
         <View style={styles.circle1}>
           <Text style={styles.loginTxt}> {isLogin ? "LOGIN" : "REGISTER"}</Text>
@@ -62,8 +64,6 @@ export default function LoginScreen() {
             </Text>
           </>
         )}
-
-        <StatusBar style="auto" />
       </ScrollView>
     </SafeAreaView>
   );

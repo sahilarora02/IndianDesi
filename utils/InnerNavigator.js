@@ -38,7 +38,7 @@ const InNavigator = () => {
         name="OnBoard"
         component={OnBoardingScreen}
         options={{
-          title: "IndianDesi",
+          title: "Indian Desi",
           headerRight: () => (
             <Pressable
               onPress={() => clearAsyncStorage()}
