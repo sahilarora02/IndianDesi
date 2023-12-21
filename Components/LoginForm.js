@@ -11,6 +11,7 @@ import CustomBtn from "./CustomBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/core";
 import { useLogin } from "../context/LoginProvider";
+import AppConfig from '../config';
 
 export default function LoginForm() {
   const navigation = useNavigation();
@@ -38,7 +39,7 @@ export default function LoginForm() {
     if (validate()) {
       try {
         console.log("here");
-        const response = await fetch("http://192.168.1.41:8000/login", {
+        const response = await fetch(`${AppConfig.apiUrl}/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

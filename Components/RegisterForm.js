@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { View, TextInput, StyleSheet, Button, Alert } from "react-native";
 import CustomBtn from "./CustomBtn";
+import AppConfig from '../config';
 
 export default function RegisterForm() {
   const [email, setEmail] = useState("");
@@ -9,7 +10,7 @@ export default function RegisterForm() {
   const handleSubmit = async () => {
     try {
       console.log("here");
-      const response = await fetch("http://192.168.1.41:8000/signUp", {
+      const response = await fetch(`${AppConfig.apiUrl}/signUp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

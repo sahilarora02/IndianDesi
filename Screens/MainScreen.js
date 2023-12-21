@@ -7,6 +7,7 @@ import CarouselCardItem, {
   SLIDER_WIDTH,
   ITEM_WIDTH,
 } from "../Components/CarousalCardItem";
+import AppConfig from '../config';
 
 // import data from "../data";
 import { useNavigation } from "@react-navigation/core";
@@ -17,10 +18,8 @@ const MainScreen = ({ route }) => {
   const [data, setData] = useState();
 
   const { selectedMeal } = route.params;
-
-  //   console.log("here");
   useEffect(() => {
-    fetch(`http://192.168.1.41:8000/getMeal/${selectedMeal}`)
+    fetch(`${AppConfig.apiUrl}/getMeal/${selectedMeal}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network request failed");
