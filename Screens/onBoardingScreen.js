@@ -1,5 +1,11 @@
 import React, { useLayoutEffect, useEffect, useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  StatusBar,
+} from "react-native";
 import LottieView from "lottie-react-native";
 import { useNavigation } from "@react-navigation/core";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -26,6 +32,8 @@ const OnBoardingScreen = ({ route }) => {
   ];
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="dark-content" />
+
       <Text style={styles.heading}>Welcome Back, {name} </Text>
       <LottieView
         source={require("../assets/onBoardingAnimation.json")}

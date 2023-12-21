@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Image, ActivityIndicator } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ActivityIndicator,
+  StatusBar,
+} from "react-native";
 import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 // import Carousel from "react-native-snap-carousel";
 // import Carousel from "react-native-reanimated-carousel";
@@ -37,6 +44,8 @@ const MainScreen = ({ route }) => {
 
   return (
     <View>
+      <StatusBar barStyle="dark-content" />
+
       {/* <Text> {selectedMeal} </Text> */}
       {data ? (
         <Carousel
