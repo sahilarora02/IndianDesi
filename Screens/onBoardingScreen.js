@@ -49,7 +49,8 @@ const OnBoardingScreen = ({ route }) => {
             style={[styles.buttonCard, { borderColor: button.color }]}
             onPress={() => {
               // Add your navigation logic here
-              console.log(`Button pressed for ${button.mealType}`);
+              navigation.navigate("MainScreen", { selectedMeal: button.mealType });
+              // console.log(`Button pressed for ${button.mealType}`);
             }}
           >
             <Text style={styles.buttonText}>{button.mealType}</Text>

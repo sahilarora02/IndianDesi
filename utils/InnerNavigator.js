@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import OnBoardingScreen from "../Screens/onBoardingScreen";
 import { useLogin } from "../context/LoginProvider";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import MainScreen from "../Screens/MainScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +44,14 @@ const InNavigator = () => {
               <Text> Logout </Text>
             </Pressable>
           ),
+        }}
+      />
+      <Stack.Screen
+        name="MainScreen"
+        component={MainScreen}
+        options={{
+          title:'Recommendations',
+         headerShown:false
         }}
       />
     </Stack.Navigator>
