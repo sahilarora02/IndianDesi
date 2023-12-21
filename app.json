@@ -3,13 +3,14 @@
     "name": "IndianDesi",
     "slug": "IndianDesi",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/IndianDesi.png",
+      "image": "./assets/SplashNew.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+     
     },
     "assetBundlePatterns": [
       "**/*"
