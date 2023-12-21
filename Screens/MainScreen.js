@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, ActivityIndicator } from "react-native";
 import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 // import Carousel from "react-native-snap-carousel";
 // import Carousel from "react-native-reanimated-carousel";
@@ -7,7 +7,7 @@ import CarouselCardItem, {
   SLIDER_WIDTH,
   ITEM_WIDTH,
 } from "../Components/CarousalCardItem";
-import AppConfig from '../config';
+import AppConfig from "../config";
 
 // import data from "../data";
 import { useNavigation } from "@react-navigation/core";
@@ -38,7 +38,7 @@ const MainScreen = ({ route }) => {
   return (
     <View>
       {/* <Text> {selectedMeal} </Text> */}
-      {data && (
+      {data ? (
         <Carousel
           layout="tinder"
           layoutCardOffset={9}
@@ -49,6 +49,12 @@ const MainScreen = ({ route }) => {
           itemWidth={ITEM_WIDTH}
           inactiveSlideShift={0}
           useScrollView={true}
+        />
+      ) : (
+        <ActivityIndicator
+          size="large"
+          color="#FC8019"
+          style={{ marginTop: 100 }}
         />
       )}
     </View>
