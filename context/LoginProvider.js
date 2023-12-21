@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext, useLayoutEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const LoginContext = createContext();
@@ -11,7 +11,7 @@ const LoginProvider = ({ children }) => {
     setIsLogin(l === "true");
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     getAuth();
   }, []);
 

@@ -50,8 +50,8 @@ const InNavigator = () => {
         name="MainScreen"
         component={MainScreen}
         options={{
-          title:'Recommendations',
-         headerShown:false
+          title: "Recommendations",
+          //  headerShown:false
         }}
       />
     </Stack.Navigator>

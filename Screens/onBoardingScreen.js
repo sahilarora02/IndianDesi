@@ -34,8 +34,8 @@ const OnBoardingScreen = ({ route }) => {
         style={{ height: 200, width: 250 }}
       />
       <Text style={styles.description}>
-        Spice up your meals and add a dash of joy to your day. From breakfast to
-        dinner, we've got the recipes that'll make your family smile!
+        IndianDesi wants to answer the most frequently asked question by every
+        MOM:
       </Text>
       <View style={styles.QuestionContainer}>
         <Text style={styles.QuestionText}>
@@ -49,7 +49,9 @@ const OnBoardingScreen = ({ route }) => {
             style={[styles.buttonCard, { borderColor: button.color }]}
             onPress={() => {
               // Add your navigation logic here
-              navigation.navigate("MainScreen", { selectedMeal: button.mealType });
+              navigation.navigate("MainScreen", {
+                selectedMeal: button.mealType,
+              });
               // console.log(`Button pressed for ${button.mealType}`);
             }}
           >
