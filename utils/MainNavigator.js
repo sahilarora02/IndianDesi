@@ -17,7 +17,8 @@ const LoginNavigator = () => {
         headerTintColor: "white",
         headerTitleStyle: { fontWeight: "bold" },
         contentStyle: {
-          backgroundColor: "#E4E5E9",
+          // backgroundColor: "#E4E5E9",
+          backgroundColor: "white",
         },
       }}
     >
