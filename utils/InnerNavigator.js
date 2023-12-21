@@ -30,7 +30,7 @@ const InNavigator = () => {
         headerTintColor: "white",
         headerTitleStyle: { fontWeight: "bold" },
         contentStyle: {
-          backgroundColor: "#E4E5E9",
+          backgroundColor: "white",
         },
       }}
     >
@@ -40,8 +40,16 @@ const InNavigator = () => {
         options={{
           title: "IndianDesi",
           headerRight: () => (
-            <Pressable onPress={() => clearAsyncStorage()}>
-              <Text> Logout </Text>
+            <Pressable
+              onPress={() => clearAsyncStorage()}
+              style={{
+                borderWidth: 1,
+                borderRadius: 10,
+                padding: 5,
+                borderColor: "white",
+              }}
+            >
+              <Text style={{ color: "white" }}> Logout </Text>
             </Pressable>
           ),
         }}
