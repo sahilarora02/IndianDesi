@@ -1,71 +1,55 @@
-import { View, Text, Pressable } from "react-native";
-import React, { useContext } from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import OnBoardingScreen from "../Screens/onBoardingScreen";
-import { useLogin } from "../context/LoginProvider";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import MainScreen from "../Screens/MainScreen";
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import MainStack from "./MainStack"; // Import the MainStack component
+import ProfileScreen from "../Screens/ProfileScreen";
+import AddSuggestionScreen from "../Screens/AddSuggestionScreen";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import  { MaterialIcons } from "@expo/vector-icons";
+const Tab = createBottomTabNavigator();
 
-const Stack = createNativeStackNavigator();
-
-const InNavigator = () => {
-  const { setIsLogin } = useLogin();
-  const clearAsyncStorage = async () => {
-    console.log("in logout");
-    try {
-      await AsyncStorage.clear();
-      console.log("AsyncStorage cleared successfully.");
-      await AsyncStorage.setItem("auth", "false");
-      setIsLogin(false);
-    } catch (error) {
-      console.error("Error clearing AsyncStorage:", error);
-    }
-  };
+const InnerNavigator = () => {
   return (
-    <Stack.Navigator
+    // <NavigationContainer>
+    <Tab.Navigator
       screenOptions={{
-        headerStyle: {
-          backgroundColor: "#FC8019",
+        headerShown: false,
+        tabBarLabelStyle: {
+          fontSize: 15, // Adjust the font size as needed
         },
-        headerTintColor: "white",
-        headerTitleStyle: { fontWeight: "bold" },
-        contentStyle: {
-          backgroundColor: "white",
-        },
+        tabBarStyle:{
+          height:60,
+          backgroundColor:"#fafafa"
+        }
       }}
     >
-      <Stack.Screen
-        name="OnBoard"
-        component={OnBoardingScreen}
+      <Tab.Screen
+        name="Main"
         options={{
-          title: "Indian Desi",
-          headerRight: () => (
-            <Pressable
-              onPress={() => clearAsyncStorage()}
-              style={{
-                borderWidth: 1,
-                borderRadius: 10,
-                padding: 5,
-                borderColor: "white",
-              }}
-            >
-              <Text style={{ color: "white" }}> Logout </Text>
-            </Pressable>
-          ),
+          tabBarLabel: "Home",
+          tabBarIcon: () => <Ionicons name="fast-food" size={24} />,
         }}
+        component={MainStack}
       />
-      <Stack.Screen
-        name="MainScreen"
-        component={MainScreen}
+      <Tab.Screen
+        name="About"
         options={{
-          title: "Recommendations",
-          //  headerShown:false
+          tabBarLabel: "Me",
+          tabBarIcon: () => <Ionicons name="person" size={24} />,
         }}
+        component={ProfileScreen}
       />
-    </Stack.Navigator>
+      <Tab.Screen
+        name="Suggestions"
+        options={{
+          tabBarLabel: "forum",
+          tabBarIcon: () => <MaterialIcons name="forum" size={24} color="black" />,
+        }}
+        component={AddSuggestionScreen}
+      />
+    </Tab.Navigator>
+    // </NavigationContainer>
   );
 };
 
-export default function InnerNavigator() {
-  return <InNavigator />;
-}
+export default InnerNavigator;
