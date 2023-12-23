@@ -49,6 +49,7 @@ const MainScreen = ({ route }) => {
   }, [navigation, selectedMeal]);
 
   const handleItemPress = (item) => {
+    console.log("pressed");
     setModalContent(item);
     setIsModalOpen(true);
   };
@@ -90,7 +91,7 @@ const MainScreen = ({ route }) => {
         presentationStyle="pageSheet"
         style={styles.modalContainer}
       >
-        {console.log("in modal")};
+        {/* {console.log("in modal")}; */}
         {modalContent && (
           <View style={styles.modalView}>
             <Image
