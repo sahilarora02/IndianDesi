@@ -25,7 +25,7 @@ const CarouselCardItem = ({ item, index, press }) => {
             style={styles.QuestionContainer}
             onPress={() => press(item)}
           >
-            <Text style={styles.QuestionText}>How to make it?</Text>
+            <Text style={styles.QuestionText}>How to make?</Text>
           </Pressable>
         </View>
       </View>
@@ -63,13 +63,11 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   QuestionContainer: {
-    position: "absolute",
-    bottom: 10,
-    right: 10,
-    borderRadius: 10,
+    marginLeft: 200,
+    marginTop: 20,
   },
   QuestionText: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: "bold",
     color: "#0000ff",
   },

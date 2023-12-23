@@ -45,7 +45,7 @@ const InnerNavigator = () => {
           tabBarLabelStyle: { color: "black", fontSize: 15 },
 
           tabBarIcon: () => (
-            <Ionicons name="fast-food" color="black" size={24} />
+            <Ionicons name="fast-food" color="#FC8019" size={24} />
           ),
         }}
         component={MainStack}
@@ -56,7 +56,9 @@ const InnerNavigator = () => {
           tabBarLabel: "Me",
           tabBarLabelStyle: { color: "black", fontSize: 15 },
 
-          tabBarIcon: () => <Ionicons name="person" color="black" size={24} />,
+          tabBarIcon: () => (
+            <Ionicons name="person" color="#FC8019" size={24} />
+          ),
         }}
         component={ProfileScreen}
       />
@@ -67,7 +69,7 @@ const InnerNavigator = () => {
           tabBarLabelStyle: { color: "black", fontSize: 15 },
 
           tabBarIcon: () => (
-            <MaterialIcons name="forum" size={24} color="black" />
+            <MaterialIcons name="forum" size={24} color="#FC8019" />
           ),
         }}
         component={AddSuggestionScreen}
