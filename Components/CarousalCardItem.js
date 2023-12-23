@@ -1,12 +1,19 @@
-import { View, Text, StyleSheet, Dimensions, Image, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Image,
+  Pressable,
+} from "react-native";
 import React from "react";
 
 export const SLIDER_WIDTH = Dimensions.get("window").width - 20;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8);
 
-const CarouselCardItem = ({ item, index, onPress }) => {
+const CarouselCardItem = ({ item, index, press }) => {
   return (
-    <Pressable >
+    <Pressable>
       <View style={styles.container}>
         <View style={styles.item}>
           <Image
@@ -16,7 +23,7 @@ const CarouselCardItem = ({ item, index, onPress }) => {
           <Text style={styles.title}>{item.title}</Text>
           <Pressable
             style={styles.QuestionContainer}
-            onPress={() => onPress(item)}
+            onPress={() => press(item)}
           >
             <Text style={styles.QuestionText}>How to make it?</Text>
           </Pressable>
@@ -64,7 +71,7 @@ const styles = StyleSheet.create({
   QuestionText: {
     fontSize: 14,
     fontWeight: "bold",
-    color:'#0000ff'
+    color: "#0000ff",
   },
 });
 

@@ -1,14 +1,15 @@
 import { NavigationContainer } from "@react-navigation/native";
 import MainNavigator from "./utils/MainNavigator";
 import LoginProvider from "./context/LoginProvider";
-import { StatusBar } from "react-native";
+import { PaperProvider } from "react-native-paper";
 
 export default function App() {
   return (
     <LoginProvider>
       <NavigationContainer>
-        <MainNavigator />
-        {/* <StatusBar /> */}
+        <PaperProvider>
+          <MainNavigator />
+        </PaperProvider>
       </NavigationContainer>
     </LoginProvider>
   );

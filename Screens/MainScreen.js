@@ -7,7 +7,7 @@ import {
   StatusBar,
   Modal,
   Button,
-  Pressable
+  Pressable,
 } from "react-native";
 import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 // import Carousel from "react-native-snap-carousel";
@@ -67,7 +67,7 @@ const MainScreen = ({ route }) => {
             <CarouselCardItem
               item={item}
               index={index}
-              onPress={handleItemPress}
+              press={handleItemPress()}
             />
           )}
           sliderWidth={SLIDER_WIDTH}
@@ -86,10 +86,11 @@ const MainScreen = ({ route }) => {
       <Modal
         visible={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
-        animationType='slide'
+        animationType="slide"
         presentationStyle="pageSheet"
         style={styles.modalContainer}
       >
+        {console.log("in modal")};
         {modalContent && (
           <View style={styles.modalView}>
             <Image
