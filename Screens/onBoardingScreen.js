@@ -4,6 +4,7 @@ import LottieView from "lottie-react-native";
 import { useNavigation } from "@react-navigation/core";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Divider } from "react-native-paper";
+import { Entypo } from '@expo/vector-icons';
 
 const OnBoardingScreen = ({ route }) => {
   const navigation = useNavigation();
@@ -64,7 +65,8 @@ const OnBoardingScreen = ({ route }) => {
                 >
                   <Text style={styles.buttonText}>{button.mealType}</Text>
                 </TouchableOpacity>
-                <Text style={{ marginTop: 25, color: "#454545" }}> {">"} </Text>
+                {/* <Text style={{ marginTop: 25, color: "#454545" }}> {">"} </Text> */}
+                <Entypo style={{marginTop:30}} name="arrow-with-circle-right" size={24} color="black" />
               </View>
               <Divider />
             </View>
@@ -137,7 +139,7 @@ const styles = StyleSheet.create({
   whiteback: {
     backgroundColor: "white",
     height: 550,
-    width: 360,
+    width: 400,
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
     alignItems: "center",
