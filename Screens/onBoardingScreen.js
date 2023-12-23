@@ -1,12 +1,5 @@
 import React, { useLayoutEffect, useEffect, useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  StatusBar,
-  ScrollView,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import LottieView from "lottie-react-native";
 import { useNavigation } from "@react-navigation/core";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -56,8 +49,8 @@ const OnBoardingScreen = ({ route }) => {
         </View>
         <View style={styles.buttonGrid}>
           {buttonsData.map((button, index) => (
-            <>
-              <View style={styles.singleBtn}>
+            <View key={index}>
+              <View style={styles.singleBtn} key={index}>
                 <TouchableOpacity
                   key={index}
                   style={[styles.buttonCard]}
@@ -74,7 +67,7 @@ const OnBoardingScreen = ({ route }) => {
                 <Text style={{ marginTop: 25, color: "#454545" }}> {">"} </Text>
               </View>
               <Divider />
-            </>
+            </View>
           ))}
         </View>
       </View>
