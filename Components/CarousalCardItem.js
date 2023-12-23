@@ -63,11 +63,11 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   QuestionContainer: {
-    marginLeft: 200,
-    marginTop: 20,
+    marginLeft: 180,
+    marginTop: 10,
   },
   QuestionText: {
-    fontSize: 12,
+    fontSize: 16,
     fontWeight: "bold",
     color: "#0000ff",
   },

@@ -15,7 +15,7 @@ const InnerNavigator = () => {
       screenOptions={{
         headerShown: false,
         tabBarLabelStyle: {
-          fontSize: 15, // Adjust the font size as needed
+          fontSize: 13, // Adjust the font size as needed
         },
         tabBarStyle: {
           height: 60,
@@ -42,10 +42,10 @@ const InnerNavigator = () => {
             </Pressable>
           ),
           tabBarLabel: "Home",
-          tabBarLabelStyle: { color: "black", fontSize: 15 },
+          tabBarLabelStyle: { color: "black", fontSize: 13 },
 
           tabBarIcon: () => (
-            <Ionicons name="fast-food" color="#FC8019" size={24} />
+            <Ionicons name="fast-food" color="black" size={24} />
           ),
         }}
         component={MainStack}
@@ -54,10 +54,10 @@ const InnerNavigator = () => {
         name="About"
         options={{
           tabBarLabel: "Me",
-          tabBarLabelStyle: { color: "black", fontSize: 15 },
+          tabBarLabelStyle: { color: "black", fontSize: 13 },
 
           tabBarIcon: () => (
-            <Ionicons name="person" color="#FC8019" size={24} />
+            <Ionicons name="person" color="black" size={24} />
           ),
         }}
         component={ProfileScreen}
@@ -66,10 +66,10 @@ const InnerNavigator = () => {
         name="Suggestions"
         options={{
           tabBarLabel: "Forum",
-          tabBarLabelStyle: { color: "black", fontSize: 15 },
+          tabBarLabelStyle: { color: "black", fontSize: 13 },
 
           tabBarIcon: () => (
-            <MaterialIcons name="forum" size={24} color="#FC8019" />
+            <MaterialIcons name="forum" size={24} color="black" />
           ),
         }}
         component={AddSuggestionScreen}
