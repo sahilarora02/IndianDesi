@@ -67,7 +67,7 @@ const MainScreen = ({ route }) => {
             <CarouselCardItem
               item={item}
               index={index}
-              press={handleItemPress()}
+              press={handleItemPress}
             />
           )}
           sliderWidth={SLIDER_WIDTH}
